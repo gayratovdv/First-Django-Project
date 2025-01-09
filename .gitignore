@@ -1,0 +1,23 @@
+# Django spetsiifik fayllar
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+
+# Migrations
+**/migrations/
+
+# Virtualenv
+venv/
+env/
+*.env
+
+# Node.js (agar ishlatilsa)
+node_modules/
+npm-debug.log*
+
+# IDElar uchun (VSCode, PyCharm va boshqalar)
+.idea/
+.vscode/
+*.swp

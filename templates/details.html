@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Detail</title>
+  <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+</head>
+<body>
+  <header class="header">
+    <h1>Book Details</h1>
+  </header>
+
+  <main class="book-detail-container">
+    <div class="book-detail">
+      <div class="book-image__wrapper">
+        <img src="{{ book.image.url }}" alt="{{ book.title }}" class="book-detail-image">
+      </div>
+      <h2 class="book-title">{{ book.title }}</h2>
+      <p class="book-author">Author: {{ book.author.name }} {{ book.author.surname }}</p>
+      <p class="book-price">Price: ${{ book.get_price }}</p>
+      <p class="book-description">{{ book.long_description }}</p>
+      <button class="back-button"><a href="/" class="back-button__link">Back to Book List</a></button>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 Library. All rights reserved.</p>
+  </footer>
+</body>
+</html>

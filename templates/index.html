@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<header class="header">
+    <h1>Welcome to Our Library</h1>
+</header>
+<main class="book-container">
+    {% for book in books %}
+        <div class="book">
+            <img src="{{ book.image.url }}" alt="{{ book.title }}" class="book-image">
+            <h2 class="book-title">{{ book.title }}</h2>
+            <p class="book-author">Author: {{ book.author.name }} {{ book.author.surname }}</p>
+            <p class="book-price">Price: ${{ book.get_price }}</p>
+            <p class="book-description">{{ book.short_description }}</p>
+            <button><a href="{% url 'books:book_detail' book.id %}">details</a></button>
+        </div>
+    {% endfor %}
+</main>
+<footer class="footer">
+    <p>&copy; 2024 Library. All rights reserved.</p>
+</footer>
+</body>
+</html>
