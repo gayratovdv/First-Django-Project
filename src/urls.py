@@ -2,11 +2,12 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from book import views
+from registration import views
 from src import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('book.urls', namespace='books'))
+    path('', include('book.urls', namespace='books')),
 ]
 
 
