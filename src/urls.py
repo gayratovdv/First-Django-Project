@@ -8,6 +8,7 @@ from src import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('book.urls', namespace='books')),
+    path('', include('registration.urls', namespace='registration'))
 ]
 
 
